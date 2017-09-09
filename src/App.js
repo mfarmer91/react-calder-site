@@ -16,9 +16,15 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <Navigation />
-                <BannerOne />
+                <div>
+                    <Navigation />
+                    <BannerOne />
+                </div>
+                <div>
+                    <BannerTwo />
+                </div>
             </div>
+
         );
     }
 }
@@ -28,7 +34,7 @@ class Navigation extends Component {
         return (
             <div id='nav' className="ui inverted menu">
               <a className="item">
-                Life
+                Home
               </a>
               <a className="item">
                 Guache
@@ -56,23 +62,24 @@ class BannerOne extends Component {
     render() {
         return (
             <div>
-                <div className='container'>
-                    <img src={require("./images/guache_one.png")} />
-                </div>
+                <div>
+                    <div className='container'>
+                        <img src={require("./images/guache_one.png")} />                    </div>
+                    </div>
             </div>
-
+        
         );
     }
 }
 
-class Overlay extends Component {
+class BannerTwo extends Component {
     render() {
         return (
-            <div>
-                <h1>Calder</h1>
+            <div id='banner_two' className='container'>
             </div>
         );
     }
 }
+
 
 export default App;
