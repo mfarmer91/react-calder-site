@@ -45,14 +45,39 @@ img {
     width: 100%;
 }
 
-/********BANNER_TWO**********/
-
 #banner_two {
     display: inline-block;
     background: black;
     width: 100%;
     padding: 35% 0;
 }
+
+/********FOOTER**********/
+
+.footer {
+    width: 100%;
+    height: 50px;
+}
+
+hr {
+    width: 50%;
+    margin-top: 2%;
+}
+
+#footer_ctn {
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: block;
+    margin-left: 42.5%;
+}
+
+.footer_text {
+    margin-bottom: 0;
+    text-align: center;
+    font-family: 'Roboto';
+}
+
 
 
 

@@ -7,7 +7,9 @@ class App extends Component {
     return (
         <div>
             <Header />
+            <Footer />
         </div>
+        
     );
   }
 }
@@ -76,6 +78,26 @@ class BannerTwo extends Component {
     render() {
         return (
             <div id='banner_two' className='container'>
+            </div>
+        );
+    }
+}
+
+class Footer extends Component {
+    
+    onGitClick() {
+        window.location.href="http://www.github.com/mfarmer91";
+    }
+    
+    render() {
+        return (
+            <div className='footer'>
+                 <div id='footer_ctn'>
+                    <button className="ui basic button" onClick={this.onGitClick}>
+                        <p className='footer_text'><i className="spy icon"></i>2017 Michael Farmer</p>
+                        <p className='footer_text'>Made in London.</p>
+                    </button>  
+                </div>
             </div>
         );
     }
