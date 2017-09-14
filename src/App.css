@@ -41,6 +41,15 @@ img {
     width: 100%;
 }
 
+#nav_title {
+    padding-right: 30%;
+    display: block;
+    width: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+} 
+
+
+
 /********FOOTER**********/
 
 .footer {
@@ -61,6 +70,25 @@ img {
     font-family: 'Roboto', sans-serif;
 }
 
+#button_display {
+    display: none;
+}
+
+/********DROPDOWN**********/
+
+#dropdown {
+    position: absolute;
+    top: 25px;
+    left: 8px;
+    width: 20%;
+
+}
+
+/********MEDIA QUERIES**********/
+
+@media (min-width: 480px) {    
+}
+
 /****************************************
 COMPONENT: HOME
 ****************************************/
@@ -70,6 +98,27 @@ COMPONENT: HOME
     background: black;
     width: 100%;
     padding: 35% 0;
+}
+
+.banner_two_text {
+    color: white;
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 100%;
+}
+
+#banner_three {
+    background-color: #f4f0e4;
+}
+
+#evaluate_button {
+    position: relative;
+    top: 50px;
+    left: 80px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
 }
 
 /****************************************
@@ -93,6 +142,25 @@ COMPONENT: MOBILE
 .mobile_text {
     font-family: 'Roboto';
     text-align: center;
+    margin-top: 4%;
+}
+
+/****************************************
+COMPONENT: CONTACT
+****************************************/
+
+
+.contact_field {
+    width: 90%;
+    padding-left: 5%;
+}
+
+#first_contact_field {
+    margin-top: 2.5%;
+}
+
+#submit_button {
+    margin-left: 5%;
 }
 
 

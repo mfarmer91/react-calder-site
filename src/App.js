@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 const Route = ({ path, component }) => {
     const pathname = window.location.pathname;
@@ -19,6 +20,17 @@ const Home = () => (
                 <img src={require("./images/guache_one.png")} />  
         </div>
         <div id='banner_two' className='container'>
+            <div className='banner_two_text'>Calder works move.</div>
+            <div className='banner_two_text'>So does his market.</div>
+        </div>
+        
+        <div id='banner_three'className='container'>
+                <div>
+                    <a id='evaluate_button' className="ui secondary button" href='/contact'>
+                        Evaluate
+                    </a>
+                </div>
+                <img src={require("./images/bushy-tail.png")} />  
         </div>
     </div>
 );
@@ -75,42 +87,114 @@ const Mobile = () => (
     </div>
 );
 
+const Contact = () => (
+    <div>
+        <form className="ui form">
+          <div id='first_contact_field' className="field contact_field">
+            <label>First Name</label>
+            <input type="text" name="first-name" placeholder="First Name" />
+          </div>
+          <div className="field contact_field">
+            <label>Last Name</label>
+            <input type="text" name="last-name" placeholder="Last Name" />
+          </div>
+        <div className="field contact_field">
+            <label>Email</label>
+            <input type="text" name="first-name" placeholder="Email" />
+          </div>
+        <div className='field contact_field'>
+            <label>Tell us about your Calder masterpiece.</label>
+            <textarea></textarea>
+        </div>
+          <button id='submit_button' className="ui button" type="submit">Submit</button>
+        </form>
+    </div>
+)
+
+
 class App extends Component {
+    
+    state = {
+        menuActive: false,
+    }
+    
+    onDropdownClick = () => {
+        if (this.state.menuActive == false){
+            this.setState({ menuActive: true});
+            console.log("We true now.");
+        } else if (this.state.menuActive == true) {
+            this.setState({ menuActive: false });
+            console.log("we false now");
+        }
+    }
+    
     render() {
+        
+        let dropdown;
+            if(this.state.menuActive){
+                dropdown = <Dropdown />
+            } else {
+                dropdown = "";
+            }
+            
         return (
             <div>
                 <div id='nav' className="ui inverted menu">
-                  <a className="item" href='/home'>
-                    Home
-                  </a>
-                  <a className="item" href='/guache'>
-                    Guache
-                  </a>
-                  <a className="item" href='/mobile'>
-                    Mobile
-                  </a>
-                  <div className="right menu">
-                    <div className="item">
-                      <div className="ui icon input">
-                        <input type="text" placeholder="Search..." />
-                        <i className="search link icon"></i>
-                      </div>
+                    <a className='item' onClick={this.onDropdownClick}><i className="sidebar icon"></i></a>
+                    {dropdown}
+                    <div id='nav_title' className="ui center aligned header item">
+                        Calder Associates Inc.
                     </div>
-                    <a className="ui item">
-                      Log In
-                    </a>
+                    
+                    <div id='button_display'>
+                      <a className="item nav_link" href='/home'>
+                        Home
+                      </a>
+                      <a className="item nav_link" href='/guache'>
+                        Guache
+                      </a>
+                      <a className="item nav_link" href='/mobile'>
+                        Mobile
+                      </a>
+                      <div className="right menu">
+                        <div className="item">
+                          <div className="ui icon input">
+                          </div>
+                        </div>
+                        <a className="ui item nav_link" href='/contact'>
+                          Contact
+                        </a>
+                    </div>
                   </div>
                 </div>
+
                 <div>
                 <Route path='/home' component={Home} />
                 <Route path='/mobile' component={Mobile} />
                 <Route path='/guache' component={Guache} />
+                <Route path='/contact' component={Contact} />
+
                 </div>
             <Footer />
             </div>
         );
     }
 }
+
+const Dropdown = () => (
+    <div id='dropdown' className="ui fluid popup bottom left transition visible ">
+        <div  className="ui inverted four column relaxed equal height divided grid">
+            <div className="column">
+                    <div className="ui link list">
+                        <a className="item dropdown_option">Home</a>
+                        <a className="item dropdown_option">Guache</a>
+                        <a className="item dropdown_option">Mobile</a>
+                        <a className="item dropdown_option">Contact</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+);
 
 class Footer extends Component {
     
@@ -134,3 +218,5 @@ class Footer extends Component {
 
 
 export default App;
+
+
