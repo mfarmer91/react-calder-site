@@ -128,30 +128,34 @@ class App extends Component {
         }
     }
     
+    
+    
     render() {
         
         let dropdown;
             if(this.state.menuActive){
-                dropdown = <Dropdown />
+                dropdown = <Dropdown />;
             } else {
                 dropdown = "";
             }
-            
+                
         return (
             <div>
                 <div id='nav' className="ui inverted menu">
                     <a className='item' onClick={this.onDropdownClick}><i className="sidebar icon"></i></a>
                     {dropdown}
                     <div id='nav_title' className="ui center aligned header item">
+                        <a href='/home'>
                         Calder Associates Inc.
+                        </a>
                     </div>
                     
                     <div id='button_display'>
-                      <a className="item nav_link" href='/home'>
+                      <a className="item nav_link" href=''>
                         Home
                       </a>
-                      <a className="item nav_link" href='/guache'>
-                        Guache
+                      <a className="item nav_link" href='/gauche'>
+                        Gauche
                       </a>
                       <a className="item nav_link" href='/mobile'>
                         Mobile
@@ -167,11 +171,10 @@ class App extends Component {
                     </div>
                   </div>
                 </div>
-
                 <div>
                 <Route path='/home' component={Home} />
                 <Route path='/mobile' component={Mobile} />
-                <Route path='/guache' component={Guache} />
+                <Route path='/gauche' component={Guache} />
                 <Route path='/contact' component={Contact} />
 
                 </div>
@@ -187,7 +190,7 @@ const Dropdown = () => (
             <div className="column">
                     <div className="ui link list">
                         <a id='option1' className="item dropdown_option" href='/home'>Home</a>
-                        <a id='option2' className="item dropdown_option" href='/guache'>Guache</a>
+                        <a id='option2' className="item dropdown_option" href='/gauche'>Gauche</a>
                         <a id='option3' className="item dropdown_option" href='/mobile'>Mobile</a>
                         <a id='option4' className="item dropdown_option" href='/contact'>Contact</a>
                     </div>
@@ -206,10 +209,18 @@ class Footer extends Component {
         return (
             <div className='footer'>
                  <div id='footer_ctn'>
-                    <button className="ui center aligned basic button" onClick={this.onGitClick}>
-                        <p className='footer_text'><i className="spy icon"></i>2017 Michael Farmer</p>
-                        <p className='footer_text'>Made in London.</p>
-                    </button>  
+                    
+                    <button className="ui center aligned basic inverted button" onClick={this.onGitClick}>
+                        <p id='name_footer_text' className='footer_text'><i className="spy icon"></i>2017 Michael Farmer</p>
+                        <p id='london_footer_text' className='footer_text'>It's from London.</p>
+                    </button>   
+                    <div className='footer_links'>
+                        <ul className='footer_list'>
+                            <li><a href='/contact'>contact us</a></li>
+                            <li><a>press</a></li>
+                            <li><a>about</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         );
