@@ -156,7 +156,7 @@ COMPONENT: GUACHE
 ****************************************/
 
 .guache_text {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     text-align: center;
     margin-top: 4%;
 }
@@ -199,6 +199,9 @@ MEDIA QUERIES
 ****************************************/
 
 @media (min-width: 500px) {
+    
+/********HOME**********/
+
     #footer_ctn {
         margin: 0 35%;
     }
@@ -206,6 +209,9 @@ MEDIA QUERIES
     
 
 @media (min-width: 768px) { 
+    
+/********HOME**********/
+
     #footer_ctn {
         margin: 0 40%;
     }
@@ -240,12 +246,44 @@ MEDIA QUERIES
     
     #tag_label, #tag_label_a {
         font-size: 1.25em;
-    }
-
+    } 
+ 
     
+    
+/********GUACHE**********/
+  
+    .guache_segment {
+        margin-right: 10%;
+    }
+    
+    .guache_img {
+        padding: 0;
+        margin: 0;
+    }
+    
+    #guache_img_one, #guache_img_two, #guache_img_three, #guache_img_four, #guache_img_five {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .guache_text {
+        font-size: 1.5em;
+    }
+    
+    #guache_ctn_two, #guache_ctn_three, #guache_ctn_four, #guache_ctn_five{
+        margin-top: 2.5%;
+    }
+    
+     #guache_ctn_five {
+        margin-bottom: 2.5%;
+    }
 }
 
 @media (min-width: 1024px) {
+    
+/********HOME**********/
+    
     #footer_ctn {
         padding-top: 0;
         margin: 0 42%;
@@ -296,10 +334,25 @@ MEDIA QUERIES
         font-size: 1.5em;
     }
     
+
+    
+/********GUACHE**********/
+     
+    #guache_img_one, #guache_img_two, #guache_img_three, #guache_img_four, #guache_img_five {
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    #initial_guache, #guache_ctn_two, #guache_ctn_three, #guache_ctn_four, #guache_ctn_five {
+        margin-left: 10%;
+        width: 80%;
+    }  
 }
 
 @media (min-width: 1400px) {
     
+/********HOME**********/
+
     #tag_label, #tag_label_a {
         font-size: 1.75em;
     }
