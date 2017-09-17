@@ -1,28 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 /****************************************
 COMPONENT: APP
 ****************************************/
@@ -80,6 +55,10 @@ img {
     display: none;
 }
 
+#london_button {
+    margin: 0 auto;
+}
+
 .footer_list {
     list-style: none;
     display: inline-block;
@@ -94,7 +73,7 @@ img {
 
 li a {
     float: left;
-    margin: 0 2.5%;
+    margin: 0 10px;
     padding-top: 2.5%;
     color: white;
     
@@ -120,6 +99,7 @@ hr {
     color: white;
     display: inline-block;
     font-size: 1.5em;
+    width: 100%;
 }
 
 
@@ -149,13 +129,27 @@ COMPONENT: HOME
 
 #evaluate_button {
     position: relative;
-    top: 50px;
+    top: 75px;
     left: 80px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
 }
 
+#bushy_img {
+    margin-right: 30%;
+    padding-bottom: 5%;
+}
 
+#tag_label, #tag_label_a {
+    position: absolute;
+    display: block;
+    top: 10%;
+    left: 2.5%;
+    width: 45%;
+    font-size: 1em;
+    background-color: black;
+    opacity: .8;
+}
 
 /****************************************
 COMPONENT: GUACHE
@@ -204,16 +198,111 @@ COMPONENT: CONTACT
 MEDIA QUERIES
 ****************************************/
 
-@media (min-width: 320px && max-width: 480px) {    
-    
+@media (min-width: 500px) {
+    #footer_ctn {
+        margin: 0 35%;
+    }
 }
+    
 
-@media (min-width: 768px && max-width: 1024px) { 
+@media (min-width: 768px) { 
+    #footer_ctn {
+        margin: 0 40%;
+    }
+    
+    #nav_title {
+        text-align: left;
+    }
+    
+    #banner_two {
+        padding: 27.5%;
+    }
+    
+     #nav_title {
+        display: inline-block;
+        width: 200px;
+        padding-right: 0;
+    }
+    
+    #bushy_img {
+        width: 70%;
+        height: 70%;
+        padding-right: 10%;
+    }
+    
+    
+    #evaluate_button {
+        top: 75px;
+        left: 57.5%;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1.5em;
+    }
+    
+    #tag_label, #tag_label_a {
+        font-size: 1.25em;
+    }
+
     
 }
 
 @media (min-width: 1024px) {
+    #footer_ctn {
+        padding-top: 0;
+        margin: 0 42%;
+    }
     
+    #stack_nav, #stack_nav_a {
+        display: none;
+    }
+    
+    #button_display {  
+        display: inline;
+        color: white;
+    }
+    
+    .nav_link {
+        float: left;
+        font-size: 1.4em;
+        font-family: 'Roboto Condensed';
+    }
+    
+    #nav_title {
+        display: inline-block;
+        width: 200px;
+        padding-right: 0;
+    }
+    
+    #bushy_img {
+        width: 62%;
+        height: 62%;
+    }
+    
+    #evaluate_button {
+        left: 55%;
+        top: 100px;    
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+    }
+    
+    #banner_two {
+        padding: 22.5%;
+    }
+    
+    .banner_two_text {
+        font-size: 3.5em; 
+    }
+    
+     #tag_label, #tag_label_a {
+        font-size: 1.5em;
+    }
+    
+}
+
+@media (min-width: 1400px) {
+    
+    #tag_label, #tag_label_a {
+        font-size: 1.75em;
+    }
 }
 
 

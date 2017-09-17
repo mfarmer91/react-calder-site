@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { StickyContainer, Sticky } from 'react-sticky';
 
 const Route = ({ path, component }) => {
     const pathname = window.location.pathname;
@@ -17,20 +16,25 @@ const Route = ({ path, component }) => {
 const Home = () => (
     <div>
         <div className='container'>
-                <img src={require("./images/guache_one.png")} />  
+            <img className='img' src={require("./images/guache_one.png")} />
+            <div id='tag_label' className="ui labels">
+                <a id='tag_label_a' className="ui inverted label">
+                   Sold for $90,000 in 2017.
+                </a>
+            </div>
         </div>
         <div id='banner_two' className='container'>
             <div className='banner_two_text'>Calder works move.</div>
             <div className='banner_two_text'>So does his market.</div>
         </div>
         
-        <div id='banner_three'className='container'>
+        <div id='banner_three' className='container'>
                 <div>
                     <a id='evaluate_button' className="ui secondary button" href='/contact'>
                         Evaluate
                     </a>
                 </div>
-                <img src={require("./images/bushy-tail.png")} />  
+                <img id='bushy_img' src={require("./images/bushy-tail.png")} />  
         </div>
     </div>
 );
@@ -142,7 +146,7 @@ class App extends Component {
         return (
             <div>
                 <div id='nav' className="ui inverted menu">
-                    <a className='item' onClick={this.onDropdownClick}><i className="sidebar icon"></i></a>
+                    <a id='stack_nav_a' className='item' onClick={this.onDropdownClick}><i id='stack_nav' className="sidebar icon"></i></a>
                     {dropdown}
                     <div id='nav_title' className="ui center aligned header item">
                         <a href='/home'>
@@ -151,7 +155,7 @@ class App extends Component {
                     </div>
                     
                     <div id='button_display'>
-                      <a className="item nav_link" href=''>
+                      <a className="item nav_link" href='home'>
                         Home
                       </a>
                       <a className="item nav_link" href='/gauche'>
@@ -160,16 +164,10 @@ class App extends Component {
                       <a className="item nav_link" href='/mobile'>
                         Mobile
                       </a>
-                      <div className="right menu">
-                        <div className="item">
-                          <div className="ui icon input">
-                          </div>
-                        </div>
                         <a className="ui item nav_link" href='/contact'>
                           Contact
                         </a>
                     </div>
-                  </div>
                 </div>
                 <div>
                 <Route path='/home' component={Home} />
@@ -210,7 +208,7 @@ class Footer extends Component {
             <div className='footer'>
                  <div id='footer_ctn'>
                     
-                    <button className="ui center aligned basic inverted button" onClick={this.onGitClick}>
+                    <button id='london_button' className="ui center aligned basic inverted button" onClick={this.onGitClick}>
                         <p id='name_footer_text' className='footer_text'><i className="spy icon"></i>2017 Michael Farmer</p>
                         <p id='london_footer_text' className='footer_text'>It's from London.</p>
                     </button>   
