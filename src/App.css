@@ -175,6 +175,10 @@ COMPONENT: MOBILE
     margin-top: 4%;
 }
 
+ #mobile_ctn_one {
+    margin-top: 2.5%;
+}
+
 /****************************************
 COMPONENT: CONTACT
 ****************************************/
@@ -278,7 +282,34 @@ MEDIA QUERIES
      #guache_ctn_five {
         margin-bottom: 2.5%;
     }
+    
+/********MOBILE**********/
+    
+    #mobile_img_one, #mobile_img_two, #mobile_img_three, #mobile_img_four, #mobile_img_five {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .mobile_text {
+        font-size: 1.5em;
+    }
+    
+    #mobile_ctn_two, #mobile_ctn_three, #mobile_ctn_four, #mobile_ctn_five{
+        margin-top: 2.5%;
+    }
+    
+     #mobile_ctn_five {
+        margin-bottom: 2.5%;
+    }
+    
+/********CONTACT**********/
+    .contact_field {
+        width: 60%;
+    }
 }
+
+
 
 @media (min-width: 1024px) {
     
@@ -348,6 +379,19 @@ MEDIA QUERIES
         width: 80%;
     }  
 }
+
+
+/********MOBILE**********/
+     
+  #mobile_img_one, #mobile_img_two, #mobile_img_three, #mobile_img_four, #mobile_img_five {
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    #mobile_ctn_one, #mobile_ctn_two, #mobile_ctn_three, #mobile_ctn_four, #mobile_ctn_five {
+        margin-left: 10%;
+        width: 80%;
+    }   
 
 @media (min-width: 1400px) {
     
