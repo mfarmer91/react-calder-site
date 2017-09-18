@@ -185,7 +185,7 @@ COMPONENT: CONTACT
 
 
 .contact_field {
-    width: 90%;
+    width: 375px;
     padding-left: 5%;
 }
 
@@ -196,6 +196,19 @@ COMPONENT: CONTACT
 #submit_button {
     margin-left: 5%;
     margin-bottom: 7.5%;
+}
+
+/****************************************
+COMPONENT: ABOUT
+****************************************/
+
+#about_text {
+    margin: 5%;
+    font-family: 'Roboto';
+}
+
+#about_header {
+    font-family: 'Roboto Condensed';
 }
 
 /****************************************
@@ -305,10 +318,25 @@ MEDIA QUERIES
     
 /********CONTACT**********/
     .contact_field {
-        width: 60%;
+        width: 600px;
+        padding-left: 10%;
+    }
+
+    #submit_button {
+        margin-left: 10%;
+    }
+    
+    /********ABOUT**********/
+
+    #about_text {
+        margin-left: 20%;
+        margin-right: 20%;
+        font-size: 1.25em;
     }
 }
 
+
+    
 
 
 @media (min-width: 1024px) {
@@ -377,8 +405,7 @@ MEDIA QUERIES
     #initial_guache, #guache_ctn_two, #guache_ctn_three, #guache_ctn_four, #guache_ctn_five {
         margin-left: 10%;
         width: 80%;
-    }  
-}
+    }
 
 
 /********MOBILE**********/
@@ -391,7 +418,8 @@ MEDIA QUERIES
     #mobile_ctn_one, #mobile_ctn_two, #mobile_ctn_three, #mobile_ctn_four, #mobile_ctn_five {
         margin-left: 10%;
         width: 80%;
-    }   
+    } 
+}
 
 @media (min-width: 1400px) {
     
@@ -399,6 +427,10 @@ MEDIA QUERIES
 
     #tag_label, #tag_label_a {
         font-size: 1.75em;
+    }
+    
+    #tag_label {
+        top: 13%;
     }
 }
 
