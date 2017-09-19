@@ -1,33 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import createHistory from 'history/createBrowserHistory';
 
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Switch,
+} from 'react-router-dom'
+
 const history = createHistory();
 
-const Link = ({ to, children }) => (
-    <a 
-        onClick={(e) => {
-            e.preventDefault();
-            history.push(to);
-        }}
-        href={to}
-    >
-        {children}
-    </a>
-)
-             
-
-const Route = ({ path, component }) => {
-    const pathname = window.location.pathname;
-    if (pathname.match(path)) {
-        return (
-            React.createElement(component)
-        );
-    } else {
-        return null;
-    }
-}
 
 const Home = () => (
     <div>
@@ -178,6 +161,7 @@ class App extends Component {
             }
                 
         return (
+            <Router>
             <div>
                 <div id='nav' className="ui inverted menu">
                     <a id='stack_nav_a' className='item' onClick={this.onDropdownClick}><i id='stack_nav' className="sidebar icon"></i></a>
@@ -214,15 +198,22 @@ class App extends Component {
                     </div>
                 </div>
                 <div>
+                <Switch>
                 <Route path='/home' component={Home} />
                 <Route path='/mobile' component={Mobile} />
                 <Route path='/gauche' component={Guache} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/about' component={About} />
+                <Route exact={true} path ='/' component={Home} />
+                <Route render={({location}) => (
+                    <div className='ui segment'><h3>Gauche, you have gone overly mobile in your path use.  The <code>{location.pathname}</code> path does not exist.</h3></div>
+                )} />
+                </Switch>
 
                 </div>
             <Footer />
             </div>
+            </Router>
         );
     }
 }
