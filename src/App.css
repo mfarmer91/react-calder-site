@@ -21,7 +21,11 @@ img {
     display: block;
     width: 100%;
     font-family: 'Roboto Condensed', sans-serif;
-} 
+}
+
+#nav_title_a {
+    color: inherit;
+}
 
 
 
@@ -433,12 +437,4 @@ MEDIA QUERIES
         top: 13%;
     }
 }
-
-
-
-
-
-
-
-
 

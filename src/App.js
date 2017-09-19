@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import createHistory from 'history/createBrowserHistory';
+
+const history = createHistory();
+
+const Link = ({ to, children }) => (
+    <a 
+        onClick={(e) => {
+            e.preventDefault();
+            history.push(to);
+        }}
+        href={to}
+    >
+        {children}
+    </a>
+)
+             
 
 const Route = ({ path, component }) => {
     const pathname = window.location.pathname;
@@ -18,9 +34,11 @@ const Home = () => (
         <div className='container'>
             <img className='img' src={require("./images/guache_one.png")} />
             <div id='tag_label' className="ui labels">
+                <Link to='/contact'>
                 <a id='tag_label_a' className="ui inverted label">
                    Sold for $90,000 in 2017.
                 </a>
+                </Link>
             </div>
         </div>
         <div id='banner_two' className='container'>
@@ -30,9 +48,11 @@ const Home = () => (
         
         <div id='banner_three' className='container'>
                 <div>
-                    <a id='evaluate_button' className="ui secondary button" href='/contact'>
+                    <Link to='/contact'>
+                    <a id='evaluate_button' className="ui secondary button">
                         Evaluate
                     </a>
+                    </Link>
                 </div>
                 <img id='bushy_img' src={require("./images/bushy-tail.png")} />  
         </div>
@@ -138,14 +158,15 @@ class App extends Component {
     onDropdownClick = () => {
         if (this.state.menuActive == false){
             this.setState({ menuActive: true});
-            console.log("We true now.");
         } else if (this.state.menuActive == true) {
             this.setState({ menuActive: false });
-            console.log("we false now");
         }
     }
     
-    
+    componentDidMount() {
+        history.listen(() =>
+            this.forceUpdate());
+    }
     
     render() {
         
@@ -162,24 +183,34 @@ class App extends Component {
                     <a id='stack_nav_a' className='item' onClick={this.onDropdownClick}><i id='stack_nav' className="sidebar icon"></i></a>
                     {dropdown}
                     <div id='nav_title' className="ui center aligned header item">
-                        <a href='/home'>
+                        <Link to='/home'>
+                        <a id='nav_title_a'>
                         Calder Associates Inc.
                         </a>
+                        </Link>
                     </div>
                     
                     <div id='button_display'>
-                      <a className="item nav_link" href='home'>
-                        Home
-                      </a>
-                      <a className="item nav_link" href='/gauche'>
-                        Gauche
-                      </a>
-                      <a className="item nav_link" href='/mobile'>
-                        Mobile
-                      </a>
-                        <a className="ui item nav_link" href='/contact'>
-                          Contact
-                        </a>
+                        <Link to='/home'>
+                          <a className="item nav_link">
+                            Home
+                          </a>
+                        </Link>
+                        <Link to='/gauche'>
+                          <a className="item nav_link">
+                            Gauche
+                          </a>
+                        </Link>
+                        <Link to='/mobile'>
+                          <a className="item nav_link">
+                            Mobile
+                          </a>
+                        </Link>
+                        <Link to='/contact'>
+                            <a className="ui item nav_link">
+                              Contact
+                            </a>
+                        </Link>
                     </div>
                 </div>
                 <div>
@@ -188,7 +219,6 @@ class App extends Component {
                 <Route path='/gauche' component={Guache} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/about' component={About} />
-
 
                 </div>
             <Footer />
