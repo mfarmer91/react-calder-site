@@ -18,6 +18,7 @@ import {
     Route,
     Link,
     Switch,
+    NavLink
 } from 'react-router-dom'
 
 const history = createHistory();
@@ -36,6 +37,12 @@ class App extends Component {
         }
     }
     
+    removeDropdown = () => {
+        if (this.state.menuActive == true){
+            this.setState({ menuActive: false });
+        }
+    }
+    
     render() {
         
         let dropdown;
@@ -47,7 +54,7 @@ class App extends Component {
                 
         return (
             <Router>
-            <div>
+            <div onClick={this.removeDropdown}>
                 <div id='nav' className="ui inverted menu">
                     <a id='stack_nav_a' className='item' onClick={this.onDropdownClick}><i id='stack_nav' className="sidebar icon"></i></a>
                     {dropdown}
@@ -60,26 +67,22 @@ class App extends Component {
                     </div>
                     
                     <div id='button_display'>
-                        <Link to='/home'>
-                          <a className="item nav_link">
-                            Home
-                          </a>
-                        </Link>
-                        <Link to='/gauche'>
-                          <a className="item nav_link">
-                            Gauche
-                          </a>
-                        </Link>
-                        <Link to='/mobile'>
-                          <a className="item nav_link">
-                            Mobile
-                          </a>
-                        </Link>
-                        <Link to='/contact'>
-                            <a className="ui item nav_link">
-                              Contact
-                            </a>
-                        </Link>
+                        <NavLink to='/home'
+                            className='item nav_link'>
+                                Home
+                        </NavLink>
+                        <NavLink to='/gauche'
+                            className="item nav_link">
+                                Gauche
+                        </NavLink>
+                        <NavLink to='/mobile'
+                            className="item nav_link">
+                                Mobile
+                        </NavLink>
+                        <NavLink to='/contact'
+                            className="item nav_link">
+                                Contact
+                        </NavLink>
                     </div>
                 </div>
                 <div>
