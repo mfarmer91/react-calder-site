@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { StickyContainer, Sticky } from 'react-sticky';
 
 import Footer from './Footer'
 import Menu from './Menu'
@@ -29,19 +28,21 @@ class App extends Component {
             <div>
                 <Router>
                     <div>
-                    <Menu />
-                    <Switch>
-                        <Route path='/home' component={Home} />
-                        <Route path='/mobile' component={Mobile} />
-                        <Route path='/gauche' component={Gauche} />
-                        <Route path='/contact' component={Contact} />
-                        <Route path='/about' component={About} />
-                        <Route exact={true} path ='/' component={Home} />
-                        <Route render={({location}) => (
-                            <div className='ui segment'><h3>Gauche, you have gone overly mobile in your path use.  The <code>{location.pathname}</code> path does not exist.</h3></div>
-                        )} />
-                    </Switch>
-                    </div>
+                         <Menu />
+                            <div id='main_content'>
+                                <Switch>
+                                    <Route path='/home' component={Home} />
+                                    <Route path='/mobile' component={Mobile} />
+                                    <Route path='/gauche' component={Gauche} />
+                                    <Route path='/contact' component={Contact} />
+                                    <Route path='/about' component={About} />
+                                    <Route exact={true} path ='/' component={Home} />
+                                    <Route render={({location}) => (
+                                        <div className='ui segment'><h3>Gauche, you have gone overly mobile in your path use.  The <code>{location.pathname}</code> path does not exist.</h3></div>
+                                    )} />
+                                </Switch>
+                            </div>
+                        </div>
                 </Router>
                 <Footer />
             </div>

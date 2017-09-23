@@ -48,7 +48,7 @@ class Menu extends Component {
                 
         return (
             <div onClick={this.removeDropdown}>
-                <div id='nav' className="ui inverted menu">
+                <div id='nav' className="ui top fixed inverted menu">
                     <a id='stack_nav_a' className='item' onClick={this.onDropdownClick}><i id='stack_nav' className="sidebar icon"></i></a>
                     {dropdown}
                     <div id='nav_title' className="ui center aligned header item">

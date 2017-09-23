@@ -10,6 +10,8 @@ body {
 #nav {
     padding: 0;
     margin: 0;
+    top: 0;
+    width: 100%;
 }
 
 img {
@@ -27,6 +29,9 @@ img {
     color: inherit;
 }
 
+#main_content {
+    padding-top: 56.25px;
+}
 
 
 /********FOOTER**********/
@@ -156,7 +161,7 @@ COMPONENT: HOME
 }
 
 /****************************************
-COMPONENT: GUACHE
+COMPONENT: GAUCHE
 ****************************************/
 
 .guache_text {
@@ -299,6 +304,7 @@ MEDIA QUERIES
      #guache_ctn_five {
         margin-bottom: 2.5%;
     }
+    
     
 /********MOBILE**********/
     
