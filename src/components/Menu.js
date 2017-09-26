@@ -66,7 +66,7 @@ class Menu extends Component {
                         </NavLink>
                         <NavLink to='/gauche'
                             className="item nav_link">
-                                Gauche
+                                Gouache
                         </NavLink>
                         <NavLink to='/mobile'
                             className="item nav_link">

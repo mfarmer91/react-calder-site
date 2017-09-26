@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 const Mobile = () => (
      <div>
+        <div id='gauche_header' className='ui centered huge header'> <span>Mobile</span>ize your future.</div>
+    
+        <div id='gauche_subheader_one' className='ui centered inverted segment'><div id='gauche_subheader_one_content'>Calder's mobiles already move quickly.  We just maximize the profit. Gain access to the global art market for kinetic sculpture.  Prices acheived range from $40,000 to $400,000.</div></div>
+    
         <div id='mobile_ctn_one' className='ui segment'>
             <img id='mobile_img_one' className="ui centered large bordered image" src={require("../images/mobile_one.png")} />
             <p className='mobile_text'>Constellation with Red Object, 1943.</p>
